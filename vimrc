@@ -1,3 +1,5 @@
+set t_Co=256
+set nu
 set nocompatible
 filetype off
 set laststatus=2
