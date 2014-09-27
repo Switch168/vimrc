@@ -1,4 +1,5 @@
 set nocompatible
+set nu
 filetype off
 set laststatus=2
 set rtp+=~/.vim/bundle/vundle/
@@ -22,6 +23,7 @@ filetype plugin indent on
 
 Plugin 'ctrlp.vim'
 
+Bundle "pangloss/vim-javascript"
 syntax enable
 set background=dark
 colorscheme vividchalk 
