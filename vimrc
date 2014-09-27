@@ -1,8 +1,62 @@
+syntax on " enabled syntax highlighting
+:set number " line numbers
+:set ai " autoindent
+:set tabstop=4 " sets tabs to 4 characters
+:set shiftwidth=4
+:set expandtab
+:set softtabstop=4 " makes the spaces feel like real tabs
+" CSS (tabs = 2, lines = 79)
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType css set sw=2
+autocmd FileType css set ts=2
+autocmd FileType css set sts=2
+" JavaScript (tabs = 4, lines = 79)
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript set sw=4
+autocmd FileType javascript set ts=4
+autocmd FileType javascript set sts=4
+" autocmd FileType javascript set tw=79
+ 
+autocmd FileType jade set omnifunc=jadecomplete#CompleteJade
+autocmd FileType jade set sw=2
+autocmd FileType jade set ts=2
+autocmd FileType jade set sts=2
+ 
+" Highlight current line only in insert mode
+autocmd InsertLeave * set nocursorline
+autocmd InsertEnter * set cursorline
+ 
+" Makefiles require TAB instead of whitespace
+autocmd FileType make setlocal noexpandtab
+ 
+" Highlight cursor
+highlight CursorLine ctermbg=8 cterm=NONE
+
 set nocompatible
 filetype off
 set laststatus=2
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set nu
+if has('win32') || has('win64')
+  set rtp+=~/vimfiles/bundle/Vundle.vim/
+  call vundle#rc('$HOME/vimfiles/bundle/')
+  if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Courier\ New\ 11
+  elseif has("gui_photon")
+    set guifont=Courier\ New:s11
+  elseif has("gui_kde")
+    set guifont=Courier\ New/11/-1/5/50/0/0/0/1/0
+  elseif has("x11")
+    set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
+  else
+    set guifont=Consolas:h11:cDEFAULT
+  endif
+endif
+else
+  " Usual quickstart instructions
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+endif
 
 " This is the Vundle package, which can be found on GitHub.
 " For GitHub repos, you specify plugins using the
@@ -21,6 +75,7 @@ Plugin 'EasyMotion'
 filetype plugin indent on
 
 Plugin 'ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
 
 syntax enable
 set background=dark
