@@ -1,5 +1,7 @@
+<<<<<<< HEAD
 set t_Co=256
 set nu
+=======
 syntax on " enabled syntax highlighting
 :set number " line numbers
 :set ai " autoindent
@@ -34,9 +36,11 @@ autocmd FileType make setlocal noexpandtab
 " Highlight cursor
 highlight CursorLine ctermbg=8 cterm=NONE
 
+>>>>>>> 7d161e5d4205d69b9a422af8de7559b71a0dbd50
 set nocompatible
 filetype off
 set laststatus=2
+set nu
 if has('win32') || has('win64')
   set rtp+=~/vimfiles/bundle/Vundle.vim/
   call vundle#rc('$HOME/vimfiles/bundle/')
@@ -64,6 +68,12 @@ endif
 " 'user/repository' format
 Plugin 'gmarik/vundle'
 
+" We could also add repositories with a ".git" extension
+Plugin 'scrooloose/nerdtree.git'
+
+" To get plugins from Vim Scripts, you can reference the plugin
+" by name as it appears on the site
+Plugin 'Buffergator'
 Plugin 'bling/vim-airline'
 Plugin 'EasyMotion'
 " Now we can turn our filetype functionality back on
@@ -71,7 +81,6 @@ filetype plugin indent on
 
 Plugin 'ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
 
 syntax enable
 set background=dark
@@ -122,23 +131,3 @@ if exists("+showtabline")
     set showtabline=1
     highlight link TabNum Special
 endif
-
-function! HighlightRepeats() range
-  let lineCounts = {}
-  let lineNum = a:firstline
-  while lineNum <= a:lastline
-    let lineText = getline(lineNum)
-    if lineText != ""
-      let lineCounts[lineText] = (has_key(lineCounts, lineText) ? lineCounts[lineText] : 0) + 1
-    endif
-    let lineNum = lineNum + 1
-  endwhile
-  exe 'syn clear Repeat'
-  for lineText in keys(lineCounts)
-    if lineCounts[lineText] >= 2
-      exe 'syn match Repeat "^' . escape(lineText, '".\^$*[]') . '$"'
-    endif
-  endfor
-endfunction
-
-command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
