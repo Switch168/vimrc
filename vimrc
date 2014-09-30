@@ -63,6 +63,7 @@ endif
 " For GitHub repos, you specify plugins using the
 " 'user/repository' format
 Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
 
 Plugin 'bling/vim-airline'
 Plugin 'EasyMotion'
@@ -72,6 +73,12 @@ filetype plugin indent on
 Plugin 'ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+" JSHINT CHECKER
+let g:syntastic_javascript_checkers = ['jshint']
+
 
 syntax enable
 set background=dark
