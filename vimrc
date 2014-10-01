@@ -64,7 +64,7 @@ endif
 " 'user/repository' format
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
-
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'EasyMotion'
 " Now we can turn our filetype functionality back on
