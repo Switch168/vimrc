@@ -75,6 +75,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
+Plugin 'terryma/vim-multiple-cursors'
 nmap <F8> :TagbarToggle<CR>
 " JSHINT CHECKER
 let g:syntastic_javascript_checkers = ['jshint']
