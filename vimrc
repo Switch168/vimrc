@@ -1,12 +1,17 @@
-set t_Co=256
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/vundle'
+"set t_Co=256
 set nu
 syntax on " enabled syntax highlighting
 :set number " line numbers
 :set ai " autoindent
-:set tabstop=4 " sets tabs to 4 characters
-:set shiftwidth=4
+:set tabstop=2 " sets tabs to 4 characters
+:set shiftwidth=2
 :set expandtab
-:set softtabstop=4 " makes the spaces feel like real tabs
+:set softtabstop=2 " makes the spaces feel like real tabs
 " CSS (tabs = 2, lines = 79)
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType css set sw=2
@@ -14,9 +19,9 @@ autocmd FileType css set ts=2
 autocmd FileType css set sts=2
 " JavaScript (tabs = 4, lines = 79)
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType javascript set sw=4
-autocmd FileType javascript set ts=4
-autocmd FileType javascript set sts=4
+autocmd FileType javascript set sw=2
+autocmd FileType javascript set ts=2
+autocmd FileType javascript set sts=2
 " autocmd FileType javascript set tw=79
  
 autocmd FileType jade set omnifunc=jadecomplete#CompleteJade
