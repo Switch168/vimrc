@@ -1,8 +1,15 @@
+
+
+"http://superuser.com/questions/878333/how-to-i-map-ctrl-g-to-open-nerdtree
+:nnoremap <C-g> :NERDTree<CR>
+
+"http://superuser.com/questions/387777/what-could-cause-strange-characters-in-vim
+let g:NERDTreeDirArrows=0
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/vundle'
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'gmarik/vundle'
 "set t_Co=256
 set nu
 syntax on " enabled syntax highlighting
@@ -67,7 +74,6 @@ endif
 " This is the Vundle package, which can be found on GitHub.
 " For GitHub repos, you specify plugins using the
 " 'user/repository' format
-Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
