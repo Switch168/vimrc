@@ -2,9 +2,13 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
- set rtp+=~/.vim/bundle/Vundle.vim
- call vundle#begin()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'bling/vim-airline'
+Plugin 'EasyMotion'
 "http://superuser.com/questions/878333/how-to-i-map-ctrl-g-to-open-nerdtree
 :nnoremap <C-g> :NERDTree<CR>
 
@@ -72,7 +76,7 @@ if has('win32') || has('win64')
 endif
 else
   " Usual quickstart instructions
-  set rtp+=~/.vim/bundle/vundle/
+  set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
 endif
 
@@ -92,6 +96,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'terryma/vim-multiple-cursors'
+call vundle#end()
 nmap <F8> :TagbarToggle<CR>
 " JSHINT CHECKER
 let g:syntastic_javascript_checkers = ['jshint']
