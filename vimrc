@@ -1,4 +1,9 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
+" set the runtime path to include Vundle and initialize
+ set rtp+=~/.vim/bundle/Vundle.vim
+ call vundle#begin()
 
 "http://superuser.com/questions/878333/how-to-i-map-ctrl-g-to-open-nerdtree
 :nnoremap <C-g> :NERDTree<CR>
@@ -68,7 +73,7 @@ endif
 else
   " Usual quickstart instructions
   set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
+  call vundle#begin()
 endif
 
 " This is the Vundle package, which can be found on GitHub.
