@@ -2,15 +2,7 @@ Installation:
 
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     git clone https://andrewvmail@bitbucket.org/andrewvmail/vimrc.git ~/.vim
-
-
-Create symlinks:
-
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
+    open vim and type ```:PluginInstall```
 
-Switch to the `~/.vim` directory, and fetch submodules:
-
-    cd ~/.vim
-    git submodule init
-    git submodule update
