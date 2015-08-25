@@ -4,5 +4,4 @@ Installation:
     git clone https://andrewvmail@bitbucket.org/andrewvmail/vimrc.git ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
-    open vim and type ```:PluginInstall```
-
+    open vim and type :PluginInstall
