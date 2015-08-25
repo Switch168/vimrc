@@ -1,5 +1,7 @@
 Installation:
 
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
     git clone https://andrewvmail@bitbucket.org/andrewvmail/vimrc.git ~/.vim
 
 Create symlinks:
