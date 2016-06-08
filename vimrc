@@ -4,21 +4,6 @@ filetype off                  " required
 " fix windows backspace
 set backspace=2
 
-" set the runtime path to include Vundle and initialize
-if has("win32")
-  set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
-  call vundle#begin('$USERPROFILE/vimfiles/bundle/')
-else
-  if has("unix")
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-  endif
-endif
-
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'bling/vim-airline'
-Plugin 'EasyMotion'
 "http://superuser.com/questions/878333/how-to-i-map-ctrl-g-to-open-nerdtree
 :nnoremap <C-g> :NERDTree<CR>
 
@@ -69,8 +54,8 @@ set nocompatible
 filetype off
 set laststatus=2
 if has('win32') || has('win64')
-  set rtp+=~/vimfiles/bundle/Vundle.vim/
-  call vundle#rc('$HOME/vimfiles/bundle/')
+  set rtp+=~/vimfiles/Vundle.vim/
+  call vundle#begin('$HOME/vimfiles/bundle/')
   if has("gui_running")
   if has("gui_gtk2")
     set guifont=Courier\ New\ 11
@@ -106,6 +91,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'terryma/vim-multiple-cursors'
+
+Plugin 'dkprice/vim-easygrep'
 call vundle#end()
 nmap <F8> :TagbarToggle<CR>
 " JSHINT CHECKER
@@ -181,3 +168,24 @@ function! HighlightRepeats() range
 endfunction
 
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
+
+let g:EasyGrepMode=0
+let g:EasyGrepCommand=0
+let g:EasyGrepRecursive=1
+let g:EasyGrepSearchCurrentBufferDir=1
+let g:EasyGrepIgnoreCase=1
+let g:EasyGrepHidden=0
+let g:EasyGrepFilesToInclude=''
+let g:EasyGrepFilesToExclude='*.swp,*~'
+let g:EasyGrepAllOptionsInExplorer=1
+let g:EasyGrepWindow=0
+let g:EasyGrepReplaceWindowMode=0
+let g:EasyGrepOpenWindowOnMatch=1
+let g:EasyGrepEveryMatch=0
+let g:EasyGrepJumpToMatch=1
+let g:EasyGrepInvertWholeWord=0
+let g:EasyGrepPatternType='regex'
+let g:EasyGrepFileAssociationsInExplorer=0
+let g:EasyGrepExtraWarnings=0
+let g:EasyGrepOptionPrefix='<leader>vy'
+let g:EasyGrepReplaceAllPerFile=0 
