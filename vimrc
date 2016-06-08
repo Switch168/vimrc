@@ -1,9 +1,19 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" fix windows backspace
+set backspace=2
+
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has("win32")
+  set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
+  call vundle#begin('$USERPROFILE/vimfiles/bundle/')
+else
+  if has("unix")
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+  endif
+endif
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
