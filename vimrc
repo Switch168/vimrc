@@ -11,10 +11,7 @@ set backspace=2
 let g:NERDTreeDirArrows=0
 set nocompatible
 filetype off
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"Plugin 'gmarik/vundle'
-"set t_Co=256
+set t_Co=256
 set nu
 syntax on " enabled syntax highlighting
 :set number " line numbers
@@ -74,6 +71,7 @@ else
   " Usual quickstart instructions
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
+  set guifont=Monaco:h13
 endif
 
 " This is the Vundle package, which can be found on GitHub.
@@ -191,3 +189,4 @@ let g:EasyGrepFileAssociationsInExplorer=0
 let g:EasyGrepExtraWarnings=0
 let g:EasyGrepOptionPrefix='<leader>vy'
 let g:EasyGrepReplaceAllPerFile=0 
+let g:EasyGrepFilesToExclude=".svn,.git,node_modules"
