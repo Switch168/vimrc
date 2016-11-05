@@ -80,7 +80,7 @@ endif
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
-Plugin 'EasyMotion'
+Plugin 'easymotion/vim-easymotion'
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
 Plugin 'ctrlp.vim'
@@ -197,19 +197,24 @@ noremap <silent> <Leader>y :TagbarToggle       " Display panel with y (or ,y)
 
 au BufWrite * :Autoformat
 
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-nmap s <Plug>(easymotion-overwin-f)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
-
+" ========== Easy motion
+let g:EasyMotion_leader_key = '<Leader><Leader>'
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
-
 " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+map <Leader><Leader>j <Plug>(easymotion-j)
+map <Leader><Leader>k <Plug>(easymotion-k)
+map <leader><leader> <Plug>(easymotion-prefix)
+" <leader>f{char} to move to {char}
+map  <leader><leader>f <Plug>(easymotion-bd-f)
+nmap <leader><leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap <leader><leader>s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <leader><leader>L <Plug>(easymotion-bd-jk)
+nmap <leader><leader>L <Plug>(easymotion-overwin-line)
+" Move to word
+map  <leader><leader>w <Plug>(easymotion-bd-w)
+nmap <leader><leader>w <Plug>(easymotion-overwin-w)
