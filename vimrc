@@ -170,7 +170,7 @@ endfunction
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 
 let g:EasyGrepMode=0
-let g:EasyGrepCommand=0
+let g:EasyGrepCommand=1
 let g:EasyGrepRecursive=1
 let g:EasyGrepSearchCurrentBufferDir=1
 let g:EasyGrepIgnoreCase=1
