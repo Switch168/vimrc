@@ -15,7 +15,7 @@ set t_Co=256
 set nu
 syntax on " enabled syntax highlighting
 :set number " line numbers
-:set ai " autoindent
+":set ai " autoindent
 :set tabstop=2 " sets tabs to 4 characters
 :set shiftwidth=2
 :set expandtab
@@ -81,8 +81,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
-" Now we can turn our filetype functionality back on
-filetype plugin indent on
 Plugin 'ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
@@ -92,6 +90,12 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'mxw/vim-jsx'
+Plugin 'isRuslan/vim-es6'
+Plugin 'kamailio/vim-kamailio-syntax'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'kylef/apiblueprint.vim'
+" Plugin end
 call vundle#end()
 nmap <F8> :TagbarToggle<CR>
 " JSHINT CHECKER
@@ -195,7 +199,7 @@ let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
 let g:tagbar_width=26                          " Default is 40, seems too wide
 noremap <silent> <Leader>y :TagbarToggle       " Display panel with y (or ,y)
 
-au BufWrite * :Autoformat
+"au BufWrite * :Autoformat
 
 " ========== Easy motion
 let g:EasyMotion_leader_key = '<Leader><Leader>'
@@ -218,3 +222,11 @@ nmap <leader><leader>L <Plug>(easymotion-overwin-line)
 " Move to word
 map  <leader><leader>w <Plug>(easymotion-bd-w)
 nmap <leader><leader>w <Plug>(easymotion-overwin-w)
+
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+
+:set completefunc=KamailioComplete
+
+" custom complete function for kamailio config
+autocmd FileType kamailio setlocal completefunc=KamailioComplete
